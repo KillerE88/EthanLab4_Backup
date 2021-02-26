@@ -19,30 +19,6 @@ int main()
 
     cout << "Starting stacked list" << endl;
 
-    Item.Set(2);
-
-    List.Push(Item);
-
-    Item.Set(30);
-
-    List.Push(Item);
-
-    Item.Set(500);
-
-    List.Push(Item);
-
-    cout << "Displaying list" << endl;
-
-    List.display();
-
-    cout << "Removing Item" << endl;
-
-    List.Pop();
-
-    cout << "New list" << endl;
-
-    List.display();
-
     Item.Set(17);
 
     List.Push(Item);
@@ -75,15 +51,7 @@ int main()
 
     List.Push(Item);
 
-    cout << "Third list" << endl;
-
     List.display();
-
-    cout << "Top Item" << endl;
-
-    List.Top();
-
-    List.isFull();
 
     cout << "Reversing order" << endl;
 
@@ -91,18 +59,6 @@ int main()
 
     List.display();
 
-    if (List.isFull() == true)
-    {
-        cout << "List is full" << endl;
-    }
-    else if (List.isFull() == false)
-    {
-        cout << "There is room left in the list" << endl;
-    }
-    else
-    {
-        cout << "Goodbye" << endl;
-    }
 }
 
 void Reverse()
@@ -123,7 +79,8 @@ int reversestack()//reverses the stack
     {
         
         int temp = stacklist.Pop();
-        Itemtype NewItem.Set(temp);
+        ItemType NewItem;
+        NewItem.Set(temp);
         List2.Push(NewItem);
         reversestack();
         
