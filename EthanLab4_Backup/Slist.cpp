@@ -29,12 +29,13 @@ void SList::Push(ItemType value) //used to place new value within the index
 	length++;
 }
 
-int SList::Pop() {
+ItemType SList::Pop() {
 	node* Temp = start;
+	ItemType tem = start->data;
 	start = start->next; //Moves top to next item in the list.
 	delete Temp; //Deletes value stored
 	length--;
-	return Temp;
+	return tem;
 }
 
 bool SList::isFull() {
@@ -66,45 +67,7 @@ void SList::display()
 	cout << "\n";
 }
 
-void SList::Top()
+ItemType SList::Top()
 {
-	cout << start->data.Get() << endl;
-}
-
-/*void SList::reverse() //Loop version
-{
-	// Initialize current, previous and
-	   // next pointers
-	node* current = start;
-	node* prev = NULL, * next = NULL;
-
-	while (current != NULL) {
-		// Store next
-		next = current->next;
-
-		// Reverse current node's pointer
-		current->next = prev;
-
-		// Move pointers one position ahead.
-		prev = current;
-		current = next;
-	}
-	start = prev;
-}*/
-
-void SList::reverse() //Recursion version
-{ //Start/current never equalling null
-	node* current = start;
-	node* prev = NULL, * next = NULL;
-
-	if (current != NULL) 
-	{
-		next = current->next; //stores next
-		current->next = prev; //Reverse current node's pointer
-		prev = current;	//moves pointers one position ahead
-		current = next; //moves pointers one position ahead
-		reverse(); //recalling to do a "Loop"
-	}
-
-	start = prev;
+	return start->data;
 }

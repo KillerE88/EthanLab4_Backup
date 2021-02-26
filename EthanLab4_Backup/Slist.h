@@ -21,11 +21,9 @@ public:
 	bool isEmpty();
 	bool isFull();
 	void Push(ItemType item);
-	int Pop();
-	ItemType nextItem();
+	ItemType Pop();
 	void display();
-	void Top();
-	void reverse();
+	ItemType Top();
 
 private:
 	int length = 0;

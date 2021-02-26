@@ -1,17 +1,13 @@
-// EthanLab4_Backup.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <iostream>
 #include "SList.h"
 #include "ItemType.h"
 
 using namespace std;
 
-SList List;
-SList List2;
-SList List3;
+SList List, List2, List3;
 
-SList stacklist;
+void Reverse();
+int reversestack();
 
 int main()
 {
@@ -55,7 +51,7 @@ int main()
 
     cout << "Reversing order" << endl;
 
-    List.reverse();
+    Reverse();
 
     List.display();
 
@@ -71,19 +67,15 @@ void Reverse()
 
 int reversestack()//reverses the stack
 {
-    if (stacklist.isEmpty())
+    if (List.isEmpty())
     {
         return 0;
     }
     else
     {
-        
-        int temp = stacklist.Pop();
-        ItemType NewItem;
-        NewItem.Set(temp);
+        ItemType NewItem = List.Pop();
         List2.Push(NewItem);
         reversestack();
-        
 
         return 1;
     }
